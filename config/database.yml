@@ -82,4 +82,4 @@ test:
 production:
   <<: *default
   username: weather_forecast_user
-  database: 'postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a.oregon-postgres.render.com/weather_forecast'
+  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a/weather_forecast
