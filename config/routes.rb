@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get 'weathers', to: 'weathers#index'
+  get '/cities', to: 'weathers#city_list'
+
+  resources :locations, only: [:index, :create, :destroy]
 end
