@@ -18,8 +18,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   username: weather_forecast_user
-  port:     5432
-  
+  port: 5432
+
 development:
   <<: *default
   database: weather_forecast
@@ -80,4 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a/weather_forecast
+  url: <%= ENV["DB_URL"] %>
