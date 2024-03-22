@@ -17,11 +17,9 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a/weather_forecast
   username: weather_forecast_user
-  password: <%= ENV["WEATHER_FORECAST_DATABASE_PASSWORD"] %>
-  
+  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a.oregon-postgres.render.com/weather_forecast
+
 development:
   <<: *default
   database: weather_forecast_development
