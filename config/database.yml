@@ -19,11 +19,10 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   username: weather_forecast_user
   port:     5432
-  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a.oregon-postgres.render.com/weather_forecast
-
+  
 development:
   <<: *default
-  database: weather_forecast_development
+  database: weather_forecast
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -57,7 +56,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: weather_forecast_test
+  database: weather_forecast
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +80,4 @@ test:
 #
 production:
   <<: *default
-  username: weather_forecast_user
   database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a/weather_forecast
