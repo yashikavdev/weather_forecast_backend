@@ -1,0 +1,25 @@
+databases:
+  - name: weather
+    databaseName: weather_forecast
+    user: postgres
+    plan: free
+
+services:
+  - type: web
+    name: weather
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: DATABASE_URL
+        value: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a/weather_forecast
+        fromDatabase:
+          name: weather
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        value: 162bde47fef0febf54f6c2523eb9c339
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

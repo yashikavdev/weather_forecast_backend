@@ -79,5 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: postgres://weather_forecast_user:6l4kGhIY4LbeDMaeOeM5JsozM6lsAajj@dpg-cnuk197jbltc73c49npg-a.oregon-postgres.render.com/weather_forecast
+  database: weather_forecast
   username: weather_forecast_user
+  host: cnuk197jbltc73c49npg-a
+  password: <%= ENV["WEATHER_FORECAST_DATABASE_PASSWORD"] %>
